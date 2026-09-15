@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "goal-achievement-platform",
+  "compatibility_date": "2026-09-14",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "vinext/server/fetch-handler",
+  "assets": {
+    "directory": "dist/client",
+    "not_found_handling": "none",
+    "html_handling": "none",
+    "binding": "ASSETS",
+  },
+  "observability": { "enabled": true, "traces": { "enabled": true } },
+  "cache": {
+    "enabled": true,
+  },
+}

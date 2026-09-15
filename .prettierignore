@@ -1,0 +1,10 @@
+node_modules
+.next
+artifacts
+dist
+.wrangler
+.vinext
+pnpm-lock.yaml
+test-results
+playwright-report
+foundation
