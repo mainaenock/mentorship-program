@@ -94,9 +94,10 @@ test('adult registers, verifies, completes setup and logs out', async ({ page })
   await page.getByLabel('Target date').fill('2027-12-31');
   await page.getByLabel('Your first recurring action').fill('Practice every Tuesday');
   await page.getByRole('button', { name: 'Create first goal' }).click();
-  await expect(page).toHaveURL('/dashboard');
-  await expect(page.getByText('Your demo setup is complete.', { exact: false })).toBeVisible();
-  await page.getByRole('button', { name: 'Log out', exact: true }).last().click();
+  await expect(page).toHaveURL('/app');
+  await expect(page.getByText('Build my first project', { exact: true })).toBeVisible();
+  await page.getByRole('button', { name: 'User menu', exact: true }).click();
+  await page.getByRole('menuitem', { name: 'Log out', exact: true }).click();
   await expect(page).toHaveURL('/login');
 });
 test('minor cannot activate without independent guardian consent', async ({ page }) => {

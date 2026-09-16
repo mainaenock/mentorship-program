@@ -1,5 +1,17 @@
 # Decisions
 
+## Prompt 2 — 16 September 2026
+
+- Continue the pinned vinext/Next/React stack and public foundation. Add domain adapters and a shared portal shell rather than replacing the application.
+- Use explicit `/demo` role entry and account-scoped sessionStorage fixtures. No implicit financial fixtures for registration; no URL-driven credit grants. Demo role stores are isolated, not a multi-user backend.
+- Keep goal edit drafts separate from new drafts and retain their original version for optimistic conflict detection. Evaluation snapshots are immutable; occurrence undo reverses only the contribution actually applied.
+- Treat Learning Credits as non-transferable/non-withdrawable eligibility records. Preserve original financial entries and append compensating reversals. Provider settlement remains backend work.
+- Use specific guardian scopes and restricted projections. Consent withdrawal removes dependent access while preserving the audit trail.
+- Reuse schema-driven administrative tables with domain-specific permissions, fields and review commands. Settings groups, ledger, reconciliation, purchases, consents and reports use their appropriate collections.
+- Generate route/control inventories from the registry and TSX declarations. Record template-level test coverage honestly; no claim of exhaustive automated coverage for every data-driven instance.
+- Keep media and service integrations explicitly unconfigured until approved. Certificates/receipts/download templates are text demonstrations. Analytics without eligible event cohorts show unavailable states.
+- Maintain the public-only PWA cache. Offline client-navigation errors explain connectivity without caching private workspace records.
+
 1. Empty repository baseline: only a 20-byte README; no prior app, package manager, tests, or failures. Git status had no unrelated changes. Retain repository identity and use pnpm.
 2. Official `create-vinext-app` Cloudflare scaffold, generated in a temporary subfolder because the existing README prevented in-place scaffolding. Scaffold files moved into root, original README then expanded.
 3. Next.js 16.3.5 and React 19.3.0 API surface, vinext 1.0.0-beta.9, Vite 8.3.0, Workers plugin. Versions pinned after installation. See [vinext documentation](https://github.com/cloudflare/vinext) for limitations. Vinext is beta, not guaranteed full Next.js parity. Static check reports 100% supported for currently used APIs.

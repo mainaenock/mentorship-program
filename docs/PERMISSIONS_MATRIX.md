@@ -2,6 +2,10 @@
 
 This matrix is a contract for future server authorisation. The frontend demo guard is a UX boundary, not a security control. No production restricted data is served here.
 
+Prompt 2 implements active-session/expiry checks in `domains/portal/permissions.ts`, permission-filtered navigation and route checks, plus adapter-level guards for every domain operation. Members access their own records, mentors only assigned mentees, and guardians only linked relationships with explicit feature consent. Guardian projections remove goal, mentor and session summaries when the relevant consent is absent; private journals/notes/full messages are never included.
+
+Ordinary administrators do not inherit finance, staff governance, safeguarding or privacy-case authority. Content, finance, safeguarding and support roles receive distinct grants; only the super-administrator receives the full registry. Financial operations, exports, protected cases and staff role changes require their specific permission. Bulk transitions validate all selected records before changing any record. API endpoints must repeat these checks; client storage is not trusted authorization.
+
 | Role                 | Intended scope                                     | Required gate                                                        |
 | -------------------- | -------------------------------------------------- | -------------------------------------------------------------------- |
 | Visitor              | Public pages, registration, mentor application     | Public                                                               |

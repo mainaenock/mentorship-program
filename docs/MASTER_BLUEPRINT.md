@@ -2,7 +2,9 @@
 
 ## Scope and product journey
 
-Prompt 1 owns the public website, accessible frontend foundation, authentication demonstrations, age-aware onboarding, guardian invitation, mentor application, and an authenticated shell. Prompt 2 owns authenticated dashboards. Do not build or imply completed dashboards in this phase.
+Prompt 1 provides the public website, accessible frontend foundation, authentication demonstrations, age-aware onboarding, guardian invitation and mentor application. Prompt 2 extends it with the authenticated member, mentor, guardian and administrator portals. Both phases use typed demonstration adapters; production backend integration belongs to later prompts. HANDOFF.md is the current Prompt 3 continuation contract.
+
+The portal registry contains 106 routes. Domain modules now include goals, learning, payments, account, portal, administration and the mentorship/guardian portal adapters. Role shells share accessible components and the existing visual tokens. Local demonstration data is scoped by account; role stores do not synchronize. The backend must replace these stores with authoritative shared records and enforce the same permission boundaries server-side.
 
 Discover → register → verify → age and consent → goal → plan → learn → action → evidence → mentorship → evaluate → adjust → achieve → next goal.
 

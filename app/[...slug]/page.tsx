@@ -18,6 +18,12 @@ import { MentorApplication } from '../../domains/mentorship/application';
 import { MentorApplicationStatus } from '../../domains/mentorship/status';
 import { config, slug } from '../../domains/shared/config';
 import { ActionLink, Card, Notice } from '../../domains/shared/ui';
+import { PortalShell } from '../../domains/portal/shell';
+import { matchPortalRoute } from '../../domains/portal/routes';
+import { MentorshipPage } from '../../domains/mentorship/portal-screens';
+import { GuardianPage } from '../../domains/guardian/portal-screens';
+import { AdminPage } from '../../domains/administration/screens';
+import { DemoEntry } from '../../domains/portal/demo-entry';
 export const dynamic = 'force-dynamic';
 type Props = { params: Promise<{ slug: string[] }> };
 const special: Record<string, [string, string]> = {
@@ -35,14 +41,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const route = segments.join('/');
   return {
     title: pages[route]?.title || special[route]?.[0] || segments[0].replaceAll('-', ' '),
-    robots: /login|register|onboarding|guardian|application|dashboard|password|verify/.test(route)
-      ? { index: false, follow: false }
-      : undefined,
+    robots:
+      /login|register|onboarding|guardian|application|dashboard|password|verify/.test(route) ||
+      !!matchPortalRoute(`/${route}`)
+        ? { index: false, follow: false }
+        : undefined,
   };
 }
 export default async function Page({ params }: Props) {
   const { slug: segments } = await params;
   const route = segments.join('/');
+  if (route === 'demo' && config.demo) return <DemoEntry />;
+  if (segments[0] === 'admin' && matchPortalRoute(`/${route}`))
+    return (
+      <PortalShell path={`/${route}`}>
+        <AdminPage path={`/${route}`} />
+      </PortalShell>
+    );
+  if (segments[0] === 'guardian' && segments[1] !== 'invitation' && matchPortalRoute(`/${route}`))
+    return (
+      <PortalShell path={`/${route}`}>
+        <GuardianPage section={segments.slice(1).join('/')} />
+      </PortalShell>
+    );
+  if (segments[0] === 'mentor' && segments[1] !== 'application' && matchPortalRoute(`/${route}`))
+    return (
+      <PortalShell path={`/${route}`}>
+        <MentorshipPage mentor section={segments.slice(1).join('/')} />
+      </PortalShell>
+    );
   if (
     ['login', 'register', 'forgot-password', 'reset-password', 'verify-email', 'verify-phone'].includes(route)
   )

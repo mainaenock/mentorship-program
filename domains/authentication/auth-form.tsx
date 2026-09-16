@@ -1,4 +1,5 @@
 'use client';
+import { config } from '../shared/config';
 import { SafeForm } from '../shared/ui';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -281,6 +282,11 @@ export function AuthForm({ mode }: { mode: string }) {
         )}
         {error && <Notice error>{error}</Notice>}
         {message && <Notice>{message}</Notice>}
+        {mode === 'login' && config.demo && (
+          <p>
+            <Link href="/demo">Explore role-based demo workspaces</Link>
+          </p>
+        )}
       </div>
     </div>
   );

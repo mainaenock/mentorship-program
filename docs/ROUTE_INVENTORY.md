@@ -1,5 +1,7 @@
 # Route inventory
 
+Prompt 2 adds the complete 106-route authenticated registry documented in [PORTAL_ROUTE_INVENTORY.md](PORTAL_ROUTE_INVENTORY.md). The authoritative definitions are in `domains/portal/routes.ts`; browser acceptance visits every pattern. `/demo` is the explicit fictional-role chooser and `/dashboard` resolves the current role home. Public and invitation routes below remain available.
+
 | Route                                                                                                | Purpose / component                                                   | Access                    |
 | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------- |
 | `/`                                                                                                  | Complete marketing homepage                                           | Public                    |
