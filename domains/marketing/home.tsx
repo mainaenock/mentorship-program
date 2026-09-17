@@ -9,10 +9,11 @@ import {
   GraduationCap,
   HeartHandshake,
   Layers,
+  Cpu,
   ShieldCheck,
-  Sparkles,
   Target,
   TrendingUp,
+  WalletCards,
 } from 'lucide-react';
 import { config } from '../shared/config';
 import { ActionLink, Badge, Card, Progress } from '../shared/ui';
@@ -62,8 +63,6 @@ export function Home() {
             <span className="art-label">SMALL STEPS. MEANINGFUL CHANGE.</span>
             <div className="art-orbit orbit-one" />
             <div className="art-orbit orbit-two" />
-            <span className="spark spark-one">✳</span>
-            <span className="spark spark-two">✦</span>
             <div className="goal-example">
               <div className="row between">
                 <span className="mini-label">
@@ -221,14 +220,17 @@ export function Home() {
             {config.categories.map((item, i) => (
               <Link className="category-card" key={item} href={`/goals?category=${encodeURIComponent(item)}`}>
                 <span className={`category-symbol color-${i % 4}`}>
-                  {
+                  {item === 'Finance' ? (
+                    <WalletCards />
+                  ) : item === 'Technology' ? (
+                    <Cpu />
+                  ) : (
                     [
-                      <GraduationCap key="e" />,
-                      <TrendingUp key="c" />,
-                      <Layers key="b" />,
-                      <Sparkles key="s" />,
-                    ][i % 4]
-                  }
+                      <GraduationCap key="education" />,
+                      <TrendingUp key="career" />,
+                      <Layers key="business" />,
+                    ][i % 3]
+                  )}
                 </span>
                 <strong>{item}</strong>
                 <ArrowUpRight size={18} />

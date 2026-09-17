@@ -954,20 +954,6 @@ progress::-webkit-progress-value {
   background: var(--accent);
   color: #30442f;
 }
-.spark {
-  position: absolute;
-  color: var(--primary);
-  font-size: 36px;
-}
-.spark-one {
-  top: 70px;
-  left: 26px;
-}
-.spark-two {
-  bottom: 60px;
-  right: 22px;
-  font-size: 49px;
-}
 .example-caption {
   position: absolute;
   bottom: -22px;
@@ -1951,16 +1937,6 @@ legend {
   .orbit-two {
     width: 300px;
     height: 390px;
-  }
-  .spark-one {
-    left: -4px;
-    top: 70px;
-    font-size: 27px;
-  }
-  .spark-two {
-    right: 2px;
-    bottom: 44px;
-    font-size: 29px;
   }
   .example-caption {
     right: 15px;
