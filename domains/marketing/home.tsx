@@ -38,16 +38,14 @@ export function Home() {
             </div>
             <h1>
               <span className="hero-title-desktop">
-                Your goals deserve
+                Turn your potential
                 <br />
-                more than
-                <br />
-                <em>“one day.”</em>
+                into <em>progress</em>.
               </span>
               <span className="hero-title-mobile">
-                Your goals deserve
+                Turn your potential
                 <br />
-                more than <em>“one day.”</em>
+                into <em>progress</em>.
               </span>
             </h1>
             <p>
