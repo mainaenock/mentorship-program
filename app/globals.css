@@ -764,6 +764,9 @@ small {
   text-decoration-thickness: 7px;
   text-underline-offset: 3px;
 }
+.hero-title-mobile {
+  display: none;
+}
 .hero-copy > p {
   font-size: 15px;
   line-height: 1.8;
@@ -1882,16 +1885,27 @@ legend {
   }
   .hero-grid {
     grid-template-columns: 1fr;
+    align-items: stretch;
     padding-top: 28px;
     padding-bottom: 40px;
   }
+  .hero-copy {
+    display: contents;
+  }
   .hero .pill {
+    align-self: flex-start;
     margin-bottom: 18px;
   }
   .hero h1 {
-    font-size: 44px;
+    font-size: clamp(34px, 10vw, 40px);
     line-height: 1.04;
     margin-bottom: 18px;
+  }
+  .hero-title-desktop {
+    display: none;
+  }
+  .hero-title-mobile {
+    display: block;
   }
   .hero h1 em {
     text-decoration-thickness: 5px;
@@ -1902,6 +1916,8 @@ legend {
     margin-bottom: 20px;
   }
   .hero .actions {
+    order: 2;
+    width: 100%;
     flex-wrap: nowrap;
     gap: 8px;
   }
@@ -1913,11 +1929,21 @@ legend {
     padding: 10px 8px;
     white-space: nowrap;
   }
+  .hero .actions .outline {
+    border-color: transparent;
+    background: transparent;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
   .hero-reassurance {
+    order: 3;
+    width: 100%;
     font-size: 8px;
     margin-top: 16px;
   }
   .journey-art {
+    order: 1;
+    width: 100%;
     transform: none;
     min-height: 410px;
     margin: 25px 0 0;

@@ -37,11 +37,18 @@ export function Home() {
               <span className="dot" /> BIG DREAMS. REAL PROGRESS.
             </div>
             <h1>
-              Your goals deserve
-              <br />
-              more than
-              <br />
-              <em>“one day.”</em>
+              <span className="hero-title-desktop">
+                Your goals deserve
+                <br />
+                more than
+                <br />
+                <em>“one day.”</em>
+              </span>
+              <span className="hero-title-mobile">
+                Your goals deserve
+                <br />
+                more than <em>“one day.”</em>
+              </span>
             </h1>
             <p>
               Turn what matters to you into a clear plan.
