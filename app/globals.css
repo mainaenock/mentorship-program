@@ -780,6 +780,12 @@ small {
   color: var(--muted);
   margin-top: 21px;
 }
+.hero .actions > a.button.outline {
+  border: none;
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
 .journey-art {
   position: relative;
   min-height: 485px;
@@ -1925,10 +1931,7 @@ legend {
     white-space: nowrap;
   }
   .hero .actions .outline {
-    border: 0;
-    background: transparent;
-    text-decoration: underline;
-    text-underline-offset: 4px;
+    border: none;
   }
   .hero-reassurance {
     width: 100%;
