@@ -1925,7 +1925,7 @@ legend {
     white-space: nowrap;
   }
   .hero .actions .outline {
-    border-color: transparent;
+    border: 0;
     background: transparent;
     text-decoration: underline;
     text-underline-offset: 4px;
