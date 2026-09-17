@@ -785,6 +785,8 @@ small {
   background: transparent;
   text-decoration: underline;
   text-underline-offset: 4px;
+  outline: none;
+  box-shadow: none;
 }
 .journey-art {
   position: relative;
